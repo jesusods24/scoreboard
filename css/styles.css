@@ -39,7 +39,7 @@ body {
    TITLE
 ---------------------------------- */
 .main-title {
-    font-size: 60px;
+    font-size: 12vh;
     font-weight: bold;
     letter-spacing: 4px;
     color: #00eaff;
@@ -75,7 +75,7 @@ body {
 ---------------------------------- */
 h1 {
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 8vh;
     letter-spacing: 1px;
 }
 
@@ -83,7 +83,7 @@ h1 {
    SCORES
 ---------------------------------- */
 .scoreTeam1 {
-    font-size: 60px;
+    font-size: 8vh;
     font-weight: bold;
     margin: 20px 0;
     color: #00eaff;
@@ -91,7 +91,7 @@ h1 {
 }
 
 .scoreTeam2 {
-    font-size: 60px;
+    font-size: 8vh;
     font-weight: bold;
     margin: 20px 0;
     color: #ff1744;
