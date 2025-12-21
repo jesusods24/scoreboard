@@ -1,0 +1,164 @@
+/* ----------------------------------
+   GLOBAL
+---------------------------------- */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* ----------------------------------
+   LAYOUT
+---------------------------------- */
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15vw;
+}
+
+.buttons {
+    margin: 10vh 10vh;
+    text-align: center;
+}
+
+/* ----------------------------------
+   TITLE
+---------------------------------- */
+.main-title {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #00eaff;
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff,
+        0 0 40px #00eaff;
+    margin: 8vh;
+}
+
+/* ----------------------------------
+   SCOREBOARD BOXES
+---------------------------------- */
+.scoreboards {
+    background: #2f2f48;
+    margin-top: 20vh;
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.scoreboards.active {
+    outline: 3px solid #00ff6a;
+    box-shadow: 0 0 20px #00ff6a;
+    border-radius: 10px;
+}
+
+/* ----------------------------------
+   HEADERS
+---------------------------------- */
+h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------
+   SCORES
+---------------------------------- */
+.scoreTeam1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.scoreTeam2 {
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #ff1744;
+    text-shadow: 0 0 10px #ff1744;
+}
+
+/* ----------------------------------
+   BUTTONS
+---------------------------------- */
+button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #00eaff;
+    color: #1e1e2f;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #00c7d1;
+    transform: scale(1.05);
+}
+
+button.Start {
+    background: #ff4d4d;
+    color: white;
+}
+
+button.Start:hover {
+    background: #e63b3b;
+}
+
+/* ----------------------------------
+   ANIMATIONS
+---------------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------------------------------
+   TURN INDICATOR (optional)
+---------------------------------- */
+/*
+.turn-indicator {
+    margin-top: 10px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.turn-active {
+    background: #00ff6a;
+    box-shadow: 0 0 10px #00ff6a;
+}
+*/

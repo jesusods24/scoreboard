@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Scoreboard</title>
+    <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 class="main-title">🏓 PING PONG 🏓</h1>
+
+        <div class="setup-box">
+
+            <label>Team 1 Name</label>
+            <input id="team1" type="text" placeholder="Team 1">
+            <input id="team1Score" type="number" placeholder="Starting Score">
+
+            <label>Team 2 Name</label>
+            <input id="team2" type="text" placeholder="Team 2">
+            <input id="team2Score" type="number" placeholder="Starting Score">
+
+            <label>Who Starts First?</label>
+            <select id="turn">
+                <option value="1">Team 1</option>
+                <option value="2">Team 2</option>
+            </select>
+
+            <button id="startGame" class="Start">Start Game</button>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("startGame").addEventListener("click", () => {
+            const team1 = encodeURIComponent(document.getElementById("team1").value || "Team 1");
+            const team2 = encodeURIComponent(document.getElementById("team2").value || "Team 2");
+            const team1Score = encodeURIComponent(document.getElementById("team1Score").value || 0);
+            const team2Score = encodeURIComponent(document.getElementById("team2Score").value || 0);
+            const turn = encodeURIComponent(document.getElementById("turn").value);
+
+            // Redirect to game.html
+            window.location.href = `game.html?team1=${team1}&team2=${team2}&turn=${turn}&team1Score=${team1Score}&team2Score=${team2Score}`;
+        });
+    </script>
+
+</body>
+</html>
