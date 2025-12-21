@@ -1,0 +1,90 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #00eaff;
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 20px #00eaff,
+        0 0 40px #00eaff;
+    margin-bottom: 40px;
+}
+
+.setup-box {
+    background: #2f2f48;
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: -10px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #00eaff;
+    color: #1e1e2f;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #00c7d1;
+    transform: scale(1.05);
+}
+
+button.Start {
+    background: #ff4d4d;
+    color: white;
+}
+
+button.Start:hover {
+    background: #e63b3b;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
