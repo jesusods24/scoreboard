@@ -16,7 +16,7 @@ body {
 }
 
 .main-title {
-    font-size: 60px;
+    font-size: 12vh;
     font-weight: bold;
     letter-spacing: 4px;
     color: #00eaff;
@@ -40,7 +40,7 @@ body {
 }
 
 label {
-    font-size: 18px;
+    font-size: 3vh;
     margin-bottom: -10px;
 }
 
@@ -48,13 +48,13 @@ input, select {
     padding: 12px;
     border-radius: 10px;
     border: none;
-    font-size: 18px;
+    font-size: 3vh;
     outline: none;
 }
 
 button {
     padding: 12px;
-    font-size: 18px;
+    font-size: 3vh;
     border: none;
     border-radius: 10px;
     cursor: pointer;
