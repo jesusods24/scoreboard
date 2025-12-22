@@ -34,6 +34,7 @@ function updateTurnUI() {
 updateTurnUI();
 score1Display.textContent = score1;
 score2Display.textContent = score2;
+updateServer()
 
 // Restart game
 function restart() {
