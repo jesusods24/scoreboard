@@ -16,17 +16,20 @@
 
             <label>Team 1 Name</label>
             <input id="team1" type="text" placeholder="Team 1">
-            <input id="team1Score" type="number" placeholder="Starting Score">
+            <input id="team1Score" type="number" placeholder="Starting Score: 0 (Default)">
 
             <label>Team 2 Name</label>
             <input id="team2" type="text" placeholder="Team 2">
-            <input id="team2Score" type="number" placeholder="Starting Score">
+            <input id="team2Score" type="number" placeholder="Starting Score: 0 (Default)">
 
             <label>Who Starts First?</label>
             <select id="turn">
                 <option value="1">Team 1</option>
                 <option value="2">Team 2</option>
             </select>
+
+            <label>Winning score (must be greater than this number but you must win by 2)</label>
+            <input id="win" type="number" placeholder="11">
 
             <button id="startGame" class="Start">Start Game</button>
         </div>
@@ -40,6 +43,7 @@
             const team1Score = encodeURIComponent(document.getElementById("team1Score").value || 0);
             const team2Score = encodeURIComponent(document.getElementById("team2Score").value || 0);
             const turn = encodeURIComponent(document.getElementById("turn").value);
+            const win = encodeURIComponent(document.getElementById("win").value|| 11);
 
             // Redirect to game.html
             window.location.href = `game.html?team1=${team1}&team2=${team2}&turn=${turn}&team1Score=${team1Score}&team2Score=${team2Score}`;
