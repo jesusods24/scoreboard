@@ -1,4 +1,3 @@
-let serveCount = 0;
 let holdTimer = null;
 let isHolding = false;
 
@@ -14,6 +13,7 @@ const team2Name = params.get("team2") || "Team 2";
 const team1Score = Number(params.get("team1Score")) || 0;
 const team2Score = Number(params.get("team2Score")) || 0;
 const startingTurn = Number(params.get("turn")) || 1;
+const winningScore = Number(params.get("win")) || 11;
 
 // Update team names
 document.querySelectorAll(".scoreboards h1")[0].textContent = team1Name;
@@ -35,25 +35,61 @@ updateTurnUI();
 score1Display.textContent = score1;
 score2Display.textContent = score2;
 
-// Serve swap logic
-function checkServeSwap() {
-    if (serveCount >= 2) {
-        currentTurn = currentTurn === 1 ? 2 : 1;
-        serveCount = 0;
-        updateTurnUI();
-    }
-}
-
 // Restart game
 function restart() {
     score1 = 0;
     score2 = 0;
-    serveCount = 0;
 
     score1Display.textContent = score1;
     score2Display.textContent = score2;
+
+    currentTurn = startingTurn;   // reset server to original starter
+    updateServer();               // recalc serve logic for 0–0
+}
+
+
+function updateServer() {
+    const totalPoints = score1 + score2;
+    const deuceTotal = (winningScore - 1) * 2;
+
+    const otherPlayer = startingTurn === 1 ? 2 : 1;
+
+    // Before deuce
+    if (totalPoints < deuceTotal) {
+        const rotation = Math.floor(totalPoints / 2) % 2;
+        currentTurn = rotation === 0 ? startingTurn : otherPlayer;
+    } 
+    // After deuce
+    else {
+        const rotation = totalPoints % 2;
+        currentTurn = rotation === 0 ? startingTurn : otherPlayer;
+    }
+
     updateTurnUI();
 }
+
+function checkWin() {
+    const diff = Math.abs(score1 - score2);
+
+    if (score1 >= winningScore && diff >= 2) {
+        setTimeout(() => {
+            alert(`${team1Name} wins!`);
+            restart();
+        });
+        return true;
+    }
+
+    if (score2 >= winningScore && diff >= 2) {
+        setTimeout(() => {
+            alert(`${team2Name} wins!`);
+            restart();
+        });
+        return true;
+    }
+
+    return false;
+}
+
 
 // Disable right-click menu
 document.addEventListener("contextmenu", (event) => event.preventDefault());
@@ -69,35 +105,34 @@ window.addEventListener("popstate", () => {
 // ------------------------------
 document.addEventListener("mousedown", (event) => {
     switch (event.button) {
-        case 0: // Left click → Team 1 scores
+        case 0:
             score1++;
-            serveCount++;
             break;
 
-        case 1: // Middle click → Hold to restart
+        case 1:
             isHolding = true;
             holdTimer = setTimeout(() => {
                 if (isHolding) restart();
             }, 1200);
             break;
 
-        case 2: // Right click → Team 2 scores
+        case 2:
             score2++;
-            serveCount++;
             break;
 
-        case 3: // Back button → Undo Team 1
+        case 3:
             score1--;
             break;
 
-        case 4: // Forward button → Undo Team 2
+        case 4:
             score2--;
             break;
     }
 
     score1Display.textContent = score1;
     score2Display.textContent = score2;
-    checkServeSwap();
+    updateServer();
+    checkWin();
 });
 
 // Cancel restart hold
@@ -113,30 +148,22 @@ document.addEventListener("mouseup", (event) => {
 // ------------------------------
 document.addEventListener("keydown", (event) => {
     switch (event.key) {
-
-        // Team 1 scoring
         case "ArrowLeft":
             score1++;
-            serveCount++;
             break;
 
-        // Team 2 scoring
         case "ArrowRight":
             score2++;
-            serveCount++;
             break;
 
-        // Undo Team 1
         case "ArrowUp":
             score1--;
             break;
 
-        // Undo Team 2
         case "ArrowDown":
             score2--;
             break;
 
-        // Restart
         case "r":
             restart();
             break;
@@ -144,5 +171,6 @@ document.addEventListener("keydown", (event) => {
 
     score1Display.textContent = score1;
     score2Display.textContent = score2;
-    checkServeSwap();
+    updateServer();
+    checkWin();
 });
