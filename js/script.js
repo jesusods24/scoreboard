@@ -42,6 +42,15 @@ function checkServeSwap() {
     }
 }
 
+function restart(){
+  score1 = 0;
+  score2 = 0;
+  serveCount = 0
+  score1Display.textContent = score1;
+  score2Display.textContent = score2;  
+}
+
+
 
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 
@@ -62,11 +71,7 @@ document.addEventListener("mousedown", (event) => {
             // Start a 2-second timer
             holdTimer = setTimeout(() => {
                 if (isHolding) {
-                    score1 = 0;
-                    score2 = 0;
-                    serveCount = 0
-                    score1Display.textContent = score1;
-                    score2Display.textContent = score2;
+                    restart()
                 }
             }, 1200);
             break;
@@ -89,6 +94,37 @@ document.addEventListener("mousedown", (event) => {
 
 });
 
+document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+        // Team 1 scoring (left side)
+        case "ArrowLeft":
+            score1++;
+            serveCount++
+            break;
+
+        // Team 2 scoring (right side)
+        case "ArrowRight":
+            score2++;
+            serveCount++
+            break;
+
+        // Undo last point Team 1
+        case "ArrowUp":
+            score1--;
+            break;
+
+        // Undo last Reset game
+        case "ArrowDown":
+            score2--;
+            break;
+        case "r":
+            restart()
+            break;
+        }
+        score1Display.textContent = score1;
+        score2Display.textContent = score2;
+        checkServeSwap()
+});
 
 document.addEventListener("mouseup", (event) => {
     if (event.button === 1) { // Middle mouse button
