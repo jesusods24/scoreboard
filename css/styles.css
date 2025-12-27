@@ -25,7 +25,7 @@ body {
 
 .content {
     width: 100%;
-    margin-top: -15vh;
+    margin-top: -20vh;
     display: flex;
     justify-content: center;
     gap: 15vw;
@@ -42,12 +42,12 @@ body {
 .main-title {
     font-size: 12vh;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: .44vh;
     color: #00eaff;
     text-shadow:
-        0 0 10px #00eaff,
-        0 0 20px #00eaff,
-        0 0 40px #00eaff;
+        0 0 1.1vh #00eaff,
+        0 0 2.2vh #00eaff,
+        0 0 4.4vh #00eaff;
     margin: 8vh;
 }
 
@@ -57,27 +57,27 @@ body {
 .scoreboards {
     background: #2f2f48;
     margin-top: 20vh;
-    padding: 30px;
-    border-radius: 20px;
-    width: 350px;
+    padding: 3vh;
+    border-radius: 2vh;
+    width: 25vw;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1vh 2.5vh rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.6s ease-out;
 }
 
 .scoreboards.active {
-    outline: 3px solid #00ff6a;
-    box-shadow: 0 0 20px #00ff6a;
-    border-radius: 10px;
+    outline: 0.5vh solid #00ff6a;
+    box-shadow: 0 0 4vh #00ff6a;
+    border-radius: 1vh;
 }
 
 /* ----------------------------------
    HEADERS
 ---------------------------------- */
 h1 {
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     font-size: 8vh;
-    letter-spacing: 1px;
+    letter-spacing: .1vh;
 }
 
 /* ----------------------------------
@@ -86,17 +86,17 @@ h1 {
 .scoreTeam1 {
     font-size: 8vh;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 2vh 0;
     color: #00eaff;
-    text-shadow: 0 0 10px #00eaff;
+    text-shadow: 0 0 1vh #00eaff;
 }
 
 .scoreTeam2 {
     font-size: 8vh;
     font-weight: bold;
-    margin: 20px 0;
+    margin: 2vh 0;
     color: #ff9d00;
-    text-shadow: 0 0 10px #ff9d00;
+    text-shadow: 0 0 1vh #ff9d00;
 }
 
 /* ----------------------------------
@@ -104,11 +104,11 @@ h1 {
 ---------------------------------- */
 button {
     flex: 1;
-    margin: 0 5px;
-    padding: 12px;
-    font-size: 18px;
+    margin: 0 .5vh;
+    padding: 1.2vh;
+    font-size: 1.8vh;
     border: none;
-    border-radius: 10px;
+    border-radius: 1vh;
     cursor: pointer;
     background: #00eaff;
     color: #1e1e2f;
@@ -136,7 +136,7 @@ button.Start:hover {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(2vh);
     }
 
     to {
@@ -145,42 +145,22 @@ button.Start:hover {
     }
 }
 
-/* ----------------------------------
-   TURN INDICATOR (optional)
----------------------------------- */
-/*
-.turn-indicator {
-    margin-top: 10px;
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-    background: transparent;
-    box-shadow: none;
-    transition: 0.3s;
-}
-
-.turn-active {
-    background: #00ff6a;
-    box-shadow: 0 0 10px #00ff6a;
-}
-*/
-
 .instructions {
-    margin-top: -8vh;
+    margin-top: -9vh;
     margin-bottom: 5vh;
     text-align: center;
     color: #c7d0ff;
-    font-size: 18px;
+    font-size: 2.5vh;
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 60vh;
 }
 
 .instructions h2 {
-    margin-bottom: 10px;
-    font-size: 26px;
+    margin-bottom: 1vh;
+    font-size: 2.6vh;
     color: #00eaff;
-    text-shadow: 0 0 8px #00eaff;
-    letter-spacing: 1px;
+    text-shadow: 0 0 .8vh #00eaff;
+    letter-spacing: .1vh;
 }
 
 .instructions ul {
@@ -190,26 +170,26 @@ button.Start:hover {
 }
 
 .instructions li {
-    margin: 6px 0;
+    margin: .6vh 0;
 }
 
 .instructions .key {
     color: #15ff00;
     font-weight: bold;
-    text-shadow: 0 0 6px #15ff00;
+    text-shadow: 0 0 .6vh #15ff00;
 }
 
 .team1-text {
     color: #00eaff;
-    text-shadow: 0 0 6px #00eaff;
+    text-shadow: 0 0 .6vh #00eaff;
 }
 
 .team2-text {
     color: #ff9d00;
-    text-shadow: 0 0 6px #ff9d00;
+    text-shadow: 0 0 .6vh #ff9d00;
 }
 
 .reset-text {
     color: #ffea00;
-    text-shadow: 0 0 6px #ffea00;
+    text-shadow: 0 0 .6vh #ffea00;
 }
