@@ -18,46 +18,46 @@ body {
 .main-title {
     font-size: 12vh;
     font-weight: bold;
-    letter-spacing: 4px;
+    letter-spacing: .44vh;
     color: #00eaff;
     text-shadow:
-        0 0 10px #00eaff,
-        0 0 20px #00eaff,
-        0 0 40px #00eaff;
-    margin-bottom: 40px;
+        0 0 1.1vh #00eaff,
+        0 0 2.2vh #00eaff,
+        0 0 4.4vh #00eaff;
+    margin: 4vh;
 }
 
 .setup-box {
     background: #2f2f48;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 4vh;
+    border-radius: 2vh;
     width: 30vw;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1vh 2.5vh rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.6s ease-out;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 2vh;
 }
 
 label {
     font-size: 3vh;
-    margin-bottom: -10px;
+    margin-bottom: -1vh;
 }
 
 input,
 select {
-    padding: 12px;
-    border-radius: 10px;
+    padding: 1.2vh;
+    border-radius: 1.0vh;
     border: none;
     font-size: 3vh;
     outline: none;
 }
 
 button {
-    padding: 12px;
+    padding: 1vh;
     font-size: 3vh;
     border: none;
-    border-radius: 10px;
+    border-radius: 2vh;
     cursor: pointer;
     background: #00eaff;
     color: #1e1e2f;
@@ -82,7 +82,7 @@ button.Start:hover {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(0.5vh);
     }
     to {
         opacity: 1;
@@ -92,14 +92,14 @@ button.Start:hover {
 
 .row {
     display: flex;
-    gap: 10px;
+    gap: 1vh;
     align-items: center;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1vh;
 }
 
 .small-label {
